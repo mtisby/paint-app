@@ -30,7 +30,7 @@ router.get('/gallery/:id', (req, res) => {
 })
 
 router.get('/sketch', (req, res) => {
-    res.send("sketch")
+    res.render("sketch.ejs")
 })
 
 router.post('/sketch', (req, res) => {
