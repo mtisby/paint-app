@@ -4,3 +4,9 @@
 
 
 #paint {border: 1px solid black; background : #333333; margin-left: auto; margin-right: auto; display: block;}
+
+.sketchPg{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

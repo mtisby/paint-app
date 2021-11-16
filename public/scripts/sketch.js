@@ -1,8 +1,28 @@
-var canvas = document.getElementById('paint');
-var ctx = canvas.getContext('2d');
+let colorPicker = document.getElementById('color');
+let color = colorPicker.value;
+colorPicker.addEventListener("change", pickColor);
 
-console.log('hello')
-console.log(ctx)
+function pickColor(event) {
+    color = event.target.value;
+    ctx.strokeStyle = color;
+    function getColor(colour){ctx.strokeStyle = color;}
+}
+
+let pxPicker = document.getElementById('pxSize');
+let pxSize = pxPicker.value;
+pxPicker.addEventListener("input", pickPX);
+
+function pickPX(event) {
+    console.log(event)
+    px = event.target.value;
+    ctx.lineWidth = px;
+    function getSize(size){ctx.lineWidth = px;}
+}
+
+
+var canvas = document.getElementById('paint');
+console.log(canvas)
+var ctx = canvas.getContext('2d');
  
 var sketch = document.getElementById('sketch');
 var sketch_style = getComputedStyle(sketch);
@@ -21,8 +41,8 @@ canvas.addEventListener('mousemove', function(e) {
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 
-ctx.strokeStyle = "red";
-function getColor(colour){ctx.strokeStyle = red;}
+// ctx.strokeStyle = color;
+// function getColor(colour){ctx.strokeStyle = color;}
 
 function getSize(size){ctx.lineWidth = 2;}
 
