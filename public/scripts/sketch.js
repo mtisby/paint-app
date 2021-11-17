@@ -23,7 +23,7 @@ function pickCanvasColor(event) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     let canvasColorVal = document.getElementById('canvasColorValue');
-    canvasColorVal.value = color;
+    canvasColorVal.innerHTML = color;
 
 }
 
@@ -37,7 +37,7 @@ function pickPenColor(event) {
     ctx.strokeStyle = color;
 
     let penColorVal = document.getElementById('penColorValue');
-    penColorVal.value = color;
+    penColorVal.innerHTML = color;
 
 }
 
