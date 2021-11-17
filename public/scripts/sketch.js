@@ -22,6 +22,9 @@ function pickCanvasColor(event) {
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    let canvasColorVal = document.getElementById('canvasColorValue');
+    canvasColorVal.value = color;
+
 }
 
 
@@ -32,6 +35,9 @@ penColorPicker.addEventListener("change", pickPenColor);
 function pickPenColor(event) {
     color = event.target.value;
     ctx.strokeStyle = color;
+
+    let penColorVal = document.getElementById('penColorValue');
+    penColorVal.value = color;
 
 }
 
@@ -106,7 +112,7 @@ canvas.addEventListener('mousemove', function(e) {
 
 /* Drawing on Paint App */
 ctx.lineJoin = 'round';
-ctx.lineCap = 'butt';
+ctx.lineCap = 'round';
 
 function getSize(size){ctx.lineWidth = 2;}
  
