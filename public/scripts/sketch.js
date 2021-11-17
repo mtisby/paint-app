@@ -3,7 +3,6 @@ let shape = null;
 
 let shapes = ['pen', 'circle', 'square', 'circle']
 var canvas = document.getElementById('paint');
-console.log(canvas)
 var ctx = canvas.getContext('2d');
  
 var sketch = document.getElementById('sketch');
@@ -12,6 +11,18 @@ canvas.width = 1000;
 canvas.height = 1000;
 
 var mouse = { x: 0, y: 0 };
+
+let canvasColorPicker = document.getElementById('canvasColor');
+let canvasColor = canvasColorPicker.value;
+canvasColorPicker.addEventListener("change", pickCanvasColor);
+
+function pickCanvasColor(event) {
+    console.log('CANVAS')
+    color = event.target.value;
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+}
 
 
 let penColorPicker = document.getElementById('penColor');
