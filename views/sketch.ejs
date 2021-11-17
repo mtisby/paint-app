@@ -1,10 +1,8 @@
-<% layout('./layouts/boilerplate.ejs')%>
+<% layout('layouts/boilerplate')%>
 
 
 <h1>hello i am sketch</h1>
 <div>
-    <button id="save">save</button>
-
     <button id="download">download</button>
 </div>
 
@@ -24,11 +22,26 @@
                  min="0" max="100" step="1"> -->
                 <input type="number" value="5" id="pxSize">
             </div>
+            <div class="penTip" id="penTip">
+                <select name="size" id="size">
+                    <option value="round">round</option>
+                    <option value="butt">square</option>
+                </select>
+            </div>
+
+            <div class="drawShapes" id="drawShapes">
+                <select name="shape" id="shape">
+                    <option value="circle">circle</option>
+                    <option value="square">square</option>
+                    <option value="triangle">triangle</option>
+                    <option value="pen">pen</option>
+                </select>
+            </div>
         </div>
         <div class="canvas">
             <h5>canvas attributes</h5>
             <div>
-                <input type="color" value="#000000" id="canvasColor">
+                <input type="color" value="#FFFFFF" id="canvasColor">
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@ const upload = multer({ storage });
 
 var router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     res.render("home.ejs")
 })
 
@@ -22,7 +22,7 @@ router.post('/profile', (req, res) => {
 })
 
 router.get('/gallery', (req, res) => {
-    res.send("gallery")
+    res.render("gallery.ejs")
 })
 
 router.get('/gallery/:id', (req, res) => {
@@ -31,10 +31,6 @@ router.get('/gallery/:id', (req, res) => {
 
 router.get('/sketch', (req, res) => {
     res.render("sketch.ejs")
-})
-
-router.post('/sketch', (req, res) => {
-    res.send("save")
 })
 
 const gallery = router;

@@ -1,3 +1,7 @@
+let checkShape = null;
+let shape = null;
+
+let shapes = ['pen', 'circle', 'square', 'circle']
 var canvas = document.getElementById('paint');
 console.log(canvas)
 var ctx = canvas.getContext('2d');
@@ -17,7 +21,7 @@ penColorPicker.addEventListener("change", pickPenColor);
 function pickPenColor(event) {
     color = event.target.value;
     ctx.strokeStyle = color;
-    function getColor(colour){ctx.strokeStyle = color;}
+
 }
 
 let pxPicker = document.getElementById('pxSize');
@@ -25,45 +29,63 @@ let pxSize = pxPicker.value;
 pxPicker.addEventListener("input", pickPX);
 
 function pickPX(event) {
-    console.log(event)
     px = event.target.value;
     ctx.lineWidth = px;
-    function getSize(size){ctx.lineWidth = px;}
-}
-
-let saveBtn = document.getElementById('save');
-saveBtn.addEventListener("click", save);
-
-function save(event) {
-    console.log(event);
-    console.log(ctx)
-    ctx.save()
 }
 
 function download(event) {
     // var canvas = document.getElementById("paint");
     // var img    = canvas.toDataURL("image/png");
     // document.write('<img src="'+img+'"/>');
+    
     const link = document.createElement('a');
     link.download = 'download.png';
     link.href = canvas.toDataURL();
     link.click();
     link.delete;
+
+    return link.href
 } 
 
 let downloadBtn = document.getElementById('download');
-downloadBtn.addEventListener("click", download, false);
+let data = downloadBtn.addEventListener("click", download, false);
 
 
-function pickCanvasColor(event) {
-    color = event.target.value;
-    console.log(color)
-    ctx.fillStyle = color;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+function setPenTip(event) {
+    ctx.lineCap = event.target.value;
+}
+let selectPenTip = document.getElementById('size');
+selectPenTip.addEventListener("change", setPenTip);
+
+
+function setShape(event) {
+    if (shape === 'circle') {
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.fillRect(200, 200, 100, 150);
+
+
+    } else if (shape === 'square') {
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.fillRect(50, 50, 100, 150);
+
+    } else if (shape === 'triangle') {
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.fillRect(200, 200, 100, 150);
+    }
 }
 
-let canvasColorPicker = document.getElementById('canvasColor');
-canvasColorPicker.addEventListener("change", pickCanvasColor);
+let selectShape = document.getElementById('shape');
+selectShape.addEventListener("change", function (event) {
+    shape = event.target.value; 
+    if (shape === "pen") {
+        console.log('yuurp')
+        checkShape = false;
+    } else {
+        checkShape = true;
+    }
+});
+
+
 
 /* Mouse Capturing Work */
 canvas.addEventListener('mousemove', function(e) {
@@ -73,15 +95,22 @@ canvas.addEventListener('mousemove', function(e) {
 
 /* Drawing on Paint App */
 ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
+ctx.lineCap = 'butt';
 
 function getSize(size){ctx.lineWidth = 2;}
  
 canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();
     ctx.moveTo(mouse.x, mouse.y);
- 
-    canvas.addEventListener('mousemove', onPaint, false);
+
+    console.log(checkShape)
+    if (checkShape === true) {
+        console.log('yes im a shape')
+        canvas.addEventListener('mousemove', setShape, false);
+    } else {
+        console.log('yes im pen')
+        canvas.addEventListener('mousemove', onPaint, false);
+    }
 }, false);
  
 canvas.addEventListener('mouseup', function() {

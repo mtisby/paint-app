@@ -96,7 +96,7 @@ app.use((req, res, next) => {
 //************//
 //** routes **//
 //************//
-app.use('/paint', gallery)
+app.use('/', gallery)
 
 app.get('/', (req, res) => {
     res.render('./splash.ejs')
