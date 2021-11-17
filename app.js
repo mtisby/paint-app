@@ -65,7 +65,7 @@ const secret = process.env.SECRET;
 // });
 
 const sessionConfig = {
-    store,
+    // store,
     secret,
     resave: false,
     saveUninitialized: true,
