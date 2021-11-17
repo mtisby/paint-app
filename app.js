@@ -40,7 +40,7 @@ import { gallery } from "./routes/gallery.js"
 // });
 
 const app = express();
-const port = 3060;
+const port = process.env.PORT || 3060;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
