@@ -66,7 +66,7 @@ function setShape(event) {
 
     } else if (shape === 'square') {
         ctx.fillStyle = ctx.strokeStyle;
-        ctx.fillRect(50, 50, 100, 150);
+        ctx.fillRect(50, 50, 400, 150);
 
     } else if (shape === 'triangle') {
         ctx.fillStyle = ctx.strokeStyle;
