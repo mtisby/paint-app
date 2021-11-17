@@ -3,9 +3,9 @@
 
 <h1>hello i am sketch</h1>
 <div>
-    <form action="/paint/sketch" method="post">
-        <button>save</button>
-    </form>
+    <button id="save">save</button>
+
+    <button id="download">download</button>
 </div>
 
 <div class="sketchPg">
@@ -14,16 +14,22 @@
     </div>
     
     <div id="sketchAssests">
-        <div class="colorPicker" id="colorPicker">
-            <input type="color" value="#000000" id="color">
+        <div class="pen">
+            <h5>pen attributes</h5>
+            <div class="colorPicker" id="colorPicker">
+                <input type="color" value="#000000" id="penColor">
+            </div>
+            <div class="pxPicker" id="pxPicker">
+                <!-- <input type="range" value="5" id="pxSize" name="cowbell"
+                 min="0" max="100" step="1"> -->
+                <input type="number" value="5" id="pxSize">
+            </div>
         </div>
-        <div class="pxPicker" id="pxPicker">
-            <!-- <input type="range" value="5" id="pxSize" name="cowbell"
-             min="0" max="100" step="1"> -->
-            <input type="number" value="5" id="pxSize">
-        </div>
-        <div class="imgUpload">
-            <h5>upload img</h5>
+        <div class="canvas">
+            <h5>canvas attributes</h5>
+            <div>
+                <input type="color" value="#000000" id="canvasColor">
+            </div>
         </div>
     </div>
 </div>

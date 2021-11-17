@@ -1,8 +1,20 @@
-let colorPicker = document.getElementById('color');
-let color = colorPicker.value;
-colorPicker.addEventListener("change", pickColor);
+var canvas = document.getElementById('paint');
+console.log(canvas)
+var ctx = canvas.getContext('2d');
+ 
+var sketch = document.getElementById('sketch');
+var sketch_style = getComputedStyle(sketch);
+canvas.width = 1000;
+canvas.height = 1000;
 
-function pickColor(event) {
+var mouse = { x: 0, y: 0 };
+
+
+let penColorPicker = document.getElementById('penColor');
+let penColor = penColorPicker.value;
+penColorPicker.addEventListener("change", pickPenColor);
+
+function pickPenColor(event) {
     color = event.target.value;
     ctx.strokeStyle = color;
     function getColor(colour){ctx.strokeStyle = color;}
@@ -19,18 +31,40 @@ function pickPX(event) {
     function getSize(size){ctx.lineWidth = px;}
 }
 
+let saveBtn = document.getElementById('save');
+saveBtn.addEventListener("click", save);
 
-var canvas = document.getElementById('paint');
-console.log(canvas)
-var ctx = canvas.getContext('2d');
- 
-var sketch = document.getElementById('sketch');
-var sketch_style = getComputedStyle(sketch);
-canvas.width = 1000;
-canvas.height = 1000;
+function save(event) {
+    console.log(event);
+    console.log(ctx)
+    ctx.save()
+}
 
-var mouse = {x: 0, y: 0};
- 
+function download(event) {
+    // var canvas = document.getElementById("paint");
+    // var img    = canvas.toDataURL("image/png");
+    // document.write('<img src="'+img+'"/>');
+    const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+} 
+
+let downloadBtn = document.getElementById('download');
+downloadBtn.addEventListener("click", download, false);
+
+
+function pickCanvasColor(event) {
+    color = event.target.value;
+    console.log(color)
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+let canvasColorPicker = document.getElementById('canvasColor');
+canvasColorPicker.addEventListener("change", pickCanvasColor);
+
 /* Mouse Capturing Work */
 canvas.addEventListener('mousemove', function(e) {
   mouse.x = e.pageX - this.offsetLeft;
@@ -41,14 +75,7 @@ canvas.addEventListener('mousemove', function(e) {
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 
-// ctx.strokeStyle = color;
-// function getColor(colour){ctx.strokeStyle = color;}
-
 function getSize(size){ctx.lineWidth = 2;}
-
-
-//ctx.strokeStyle = 
-//ctx.strokeStyle = document.settings.colour[1].value;
  
 canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();
