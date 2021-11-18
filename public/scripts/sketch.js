@@ -17,7 +17,6 @@ let canvasColor = canvasColorPicker.value;
 canvasColorPicker.addEventListener("change", pickCanvasColor);
 
 function pickCanvasColor(event) {
-    console.log('CANVAS')
     color = event.target.value;
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -78,6 +77,7 @@ selectPenTip.addEventListener("change", setPenTip);
 function setShape(event) {
     if (shape === 'circle') {
         ctx.fillStyle = ctx.strokeStyle;
+        console.log(mouse.x)
         ctx.fillRect(200, 200, 100, 150);
 
 
@@ -120,10 +120,63 @@ canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();
     ctx.moveTo(mouse.x, mouse.y);
 
-    console.log(checkShape)
+    // console.log("moveTo", mouse.x)
+    let startx = mouse.x
+    let starty = mouse.y
+
+    // console.log(checkShape)
     if (checkShape === true) {
         console.log('yes im a shape')
-        canvas.addEventListener('mousemove', setShape, false);
+        // canvas.addEventListener('mousemove', function (e) {
+            if (shape === 'circle') {
+                console.log(mouse.x)
+                canvas.addEventListener('mousemove', function (e) {
+                    ctx.fillStyle = ctx.strokeStyle;
+                    let endx = mouse.x;
+                    let endy = mouse.y;
+                    console.log(`onset ${mouse.x} offset ${startx}`)
+                    console.log(`onset ${mouse.y} offset ${starty}`)
+                    if (startx != null || starty != null) {
+                        ctx.arc(startx, starty, 5, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    }
+
+                    startx = null
+                    starty = null
+
+
+                    canvas.removeEventListener('mousemove', function () {
+                        console.log('done')
+                    }, false);
+                }, false);
+        
+            } else if (shape === 'square') {
+                canvas.addEventListener('mousedown', function (e) {
+                    
+                    let endx = mouse.x;
+                    let endy = mouse.y;
+
+                    console.log(`startx: ${startx} endx: ${endx}`)
+
+                    if (startx != null || starty != null) {
+                        ctx.fillStyle = ctx.strokeStyle;
+                        ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
+                    }
+                
+                    startx = null
+                    starty = null
+
+
+                    canvas.removeEventListener('mousemove', function () {
+                        console.log('done')
+                    }, false);
+                }, false);
+        
+            } else if (shape === 'triangle') {
+                ctx.fillStyle = ctx.strokeStyle;
+                ctx.fillRect(200, 200, 100, 150);
+            }
+        // }, false);
     } else {
         console.log('yes im pen')
         canvas.addEventListener('mousemove', onPaint, false);
