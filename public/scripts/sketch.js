@@ -7,8 +7,8 @@ var ctx = canvas.getContext('2d');
  
 var sketch = document.getElementById('sketch');
 var sketch_style = getComputedStyle(sketch);
-canvas.width = 1000;
-canvas.height = 1000;
+canvas.width = 500;
+canvas.height = 500;
 
 var mouse = { x: 0, y: 0 };
 
@@ -60,7 +60,7 @@ function download(event) {
     link.click();
     link.delete;
 
-    return link.href
+    console.log(link.href)
 } 
 
 let downloadBtn = document.getElementById('download');
@@ -69,6 +69,7 @@ let data = downloadBtn.addEventListener("click", download, false);
 
 function setPenTip(event) {
     ctx.lineCap = event.target.value;
+    ctx.lineJoin = 'butt';
 }
 let selectPenTip = document.getElementById('size');
 selectPenTip.addEventListener("change", setPenTip);
@@ -198,3 +199,18 @@ var onPaint = function() {
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
 };
+
+
+let clearBtn = document.getElementById('clear');
+clearBtn.addEventListener('click', function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}, false);
+
+let saveBtn = document.getElementById('save');
+saveBtn.addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL();
+
+    // save link.href to cloudinary
+}, false);
