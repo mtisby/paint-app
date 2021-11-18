@@ -1,5 +1,10 @@
 let checkShape = null;
 let shape = null;
+let startx = null;
+let starty = null;
+let previousx = null;
+let previousy = null;
+
 
 let shapes = ['pen', 'circle', 'square', 'circle']
 var canvas = document.getElementById('paint');
@@ -74,7 +79,6 @@ function setPenTip(event) {
 let selectPenTip = document.getElementById('size');
 selectPenTip.addEventListener("change", setPenTip);
 
-
 function setShape(event) {
     if (shape === 'circle') {
         ctx.fillStyle = ctx.strokeStyle;
@@ -103,7 +107,27 @@ selectShape.addEventListener("change", function (event) {
     }
 });
 
+function drawSqure(event) {
+    let endx = mouse.x;
+    let endy = mouse.y;
 
+    console.log(`startx : ${startx} end: ${endx}`)
+    console.log(startx, previousx)
+
+    if (previousx != startx || previousy != starty) {
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
+    }
+
+
+    previousx = endx;
+    previousy = endy;
+
+    endx = null;
+    endy = null;
+    startx = null;
+    starty = null;
+}
 
 /* Mouse Capturing Work */
 canvas.addEventListener('mousemove', function(e) {
@@ -122,13 +146,12 @@ canvas.addEventListener('mousedown', function(e) {
     ctx.moveTo(mouse.x, mouse.y);
 
     // console.log("moveTo", mouse.x)
-    let startx = mouse.x
-    let starty = mouse.y
+    startx = mouse.x
+    starty = mouse.y
 
     // console.log(checkShape)
     if (checkShape === true) {
         console.log('yes im a shape')
-        // canvas.addEventListener('mousemove', function (e) {
             if (shape === 'circle') {
                 // console.log(mouse.x)
                 // canvas.addEventListener('mousemove', function (e) {
@@ -152,39 +175,13 @@ canvas.addEventListener('mousedown', function(e) {
                 // }, false);
         
             } else if (shape === 'square') {
-                // canvas.addEventListener('mousedown', function (e) {
-                //     startx = mouse.x;
-                //     starty = mouse.y;
-                //     canvas.addEventListener('mousemove', function (e) {
-                //         let endx = mouse.x;
-                //         let endy = mouse.y;
+                console.log('hello0')
+                canvas.addEventListener('mousedown', drawSqure, true)
 
-                //         console.log(`startx : ${startx} end: ${endx}`)
-
-                //         ctx.fillStyle = ctx.strokeStyle;
-                //         ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
-                        
-                //     }, false);
-
-                //     // if (startx != null || starty != null) {
-                //     //     ctx.fillStyle = ctx.strokeStyle;
-                //     //     ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
-                //     // }
-                
-                //     startx = null
-                //     starty = null
-
-
-                //     canvas.removeEventListener('mousemove', function () {
-                //         console.log('done')
-                //     }, false);
-                // }, false);
-        
             } else if (shape === 'triangle') {
                 ctx.fillStyle = ctx.strokeStyle;
                 ctx.fillRect(200, 200, 100, 150);
             }
-        // }, false);
     } else {
         console.log('yes im pen')
         canvas.addEventListener('mousemove', onPaint, false);
@@ -194,6 +191,8 @@ canvas.addEventListener('mousedown', function(e) {
 canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
 }, false);
+
+canvas.removeEventListener('mousedown', drawSqure, true);
  
 var onPaint = function() {
     ctx.lineTo(mouse.x, mouse.y);
@@ -214,3 +213,22 @@ saveBtn.addEventListener('click', function() {
 
     // save link.href to cloudinary
 }, false);
+
+// square
+// function (e) {
+//     // canvas.addEventListener('mousedown', function (e) {
+//         let endx = mouse.x;
+//         let endy = mouse.y;
+
+//         console.log(`startx : ${startx} end: ${endx}`)
+
+//         ctx.fillStyle = ctx.strokeStyle;
+//         ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
+        
+//     // }, false);
+
+//     // if (startx != null || starty != null) {
+//     //     ctx.fillStyle = ctx.strokeStyle;
+//     //     ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
+//     // }
+// }, false);
