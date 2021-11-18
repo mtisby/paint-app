@@ -25,19 +25,20 @@ import { User } from './models/user.js'
 
 // routes
 import { gallery } from "./routes/gallery.js"
+import { userRoutes } from "./routes/users.js"
 
-// const dbUrl = 'mongodb://localhost:27017/paint-app';
+const dbUrl = 'mongodb://localhost:27017/paint-app';
 
-// mongoose.connect(dbUrl, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error:"));
-// db.once("open", () => {
-//     console.log("Database connected");
-// });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
 
 const app = express();
 const port = process.env.PORT || 3060;
@@ -56,16 +57,16 @@ app.use(express.static(__dirname + '/public'));
 
 const secret = process.env.SECRET;
 
-// const store = MongoStore.create({
-//     mongoUrl: dbUrl,
-//     touchAfter: 24 * 60 * 60,
-//     crypto: {
-//         secret
-//     }
-// });
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret
+    }
+});
 
 const sessionConfig = {
-    // store,
+    store,
     secret,
     resave: false,
     saveUninitialized: true,
@@ -97,6 +98,7 @@ app.use((req, res, next) => {
 //** routes **//
 //************//
 app.use('/', gallery)
+app.use('/', userRoutes)
 
 app.get('/', (req, res) => {
     res.render('./splash.ejs')

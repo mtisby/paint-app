@@ -13,11 +13,11 @@ router.get('/home', (req, res) => {
     res.render("home.ejs")
 })
 
-router.get('/profile', (req, res) => {
+router.get('/profile', isLoggedIn, (req, res) => {
     res.render("profile.ejs")
 })
 
-router.post('/profile', (req, res) => {
+router.post('/profile', isLoggedIn, (req, res) => {
     res.send("edit your profile?")
 })
 
@@ -29,7 +29,7 @@ router.get('/gallery/:id', (req, res) => {
     res.send("gallery id")
 })
 
-router.get('/sketch', (req, res) => {
+router.get('/sketch', isLoggedIn, (req, res) => {
     res.render("sketch.ejs")
 })
 

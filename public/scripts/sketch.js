@@ -129,48 +129,55 @@ canvas.addEventListener('mousedown', function(e) {
         console.log('yes im a shape')
         // canvas.addEventListener('mousemove', function (e) {
             if (shape === 'circle') {
-                console.log(mouse.x)
-                canvas.addEventListener('mousemove', function (e) {
-                    ctx.fillStyle = ctx.strokeStyle;
-                    let endx = mouse.x;
-                    let endy = mouse.y;
-                    console.log(`onset ${mouse.x} offset ${startx}`)
-                    console.log(`onset ${mouse.y} offset ${starty}`)
-                    if (startx != null || starty != null) {
-                        ctx.arc(startx, starty, 5, 0, 2 * Math.PI);
-                        ctx.stroke();
-                    }
+                // console.log(mouse.x)
+                // canvas.addEventListener('mousemove', function (e) {
+                //     ctx.fillStyle = ctx.strokeStyle;
+                //     let endx = mouse.x;
+                //     let endy = mouse.y;
+                //     console.log(`onset ${mouse.x} offset ${startx}`)
+                //     console.log(`onset ${mouse.y} offset ${starty}`)
+                //     if (startx != null || starty != null) {
+                //         ctx.arc(startx, starty, 5, 0, 2 * Math.PI);
+                //         ctx.stroke();
+                //     }
 
-                    startx = null
-                    starty = null
+                //     startx = null
+                //     starty = null
 
 
-                    canvas.removeEventListener('mousemove', function () {
-                        console.log('done')
-                    }, false);
-                }, false);
+                //     canvas.removeEventListener('mousemove', function () {
+                //         console.log('done')
+                //     }, false);
+                // }, false);
         
             } else if (shape === 'square') {
-                canvas.addEventListener('mousedown', function (e) {
-                    
-                    let endx = mouse.x;
-                    let endy = mouse.y;
+                // canvas.addEventListener('mousedown', function (e) {
+                //     startx = mouse.x;
+                //     starty = mouse.y;
+                //     canvas.addEventListener('mousemove', function (e) {
+                //         let endx = mouse.x;
+                //         let endy = mouse.y;
 
-                    console.log(`startx: ${startx} endx: ${endx}`)
+                //         console.log(`startx : ${startx} end: ${endx}`)
 
-                    if (startx != null || starty != null) {
-                        ctx.fillStyle = ctx.strokeStyle;
-                        ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
-                    }
+                //         ctx.fillStyle = ctx.strokeStyle;
+                //         ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
+                        
+                //     }, false);
+
+                //     // if (startx != null || starty != null) {
+                //     //     ctx.fillStyle = ctx.strokeStyle;
+                //     //     ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
+                //     // }
                 
-                    startx = null
-                    starty = null
+                //     startx = null
+                //     starty = null
 
 
-                    canvas.removeEventListener('mousemove', function () {
-                        console.log('done')
-                    }, false);
-                }, false);
+                //     canvas.removeEventListener('mousemove', function () {
+                //         console.log('done')
+                //     }, false);
+                // }, false);
         
             } else if (shape === 'triangle') {
                 ctx.fillStyle = ctx.strokeStyle;
