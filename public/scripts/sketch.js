@@ -5,6 +5,7 @@ let starty = null;
 let previousx = null;
 let previousy = null;
 
+let countClicks = 0;
 
 let shapes = ['pen', 'circle', 'square', 'circle']
 var canvas = document.getElementById('paint');
@@ -107,26 +108,34 @@ selectShape.addEventListener("change", function (event) {
     }
 });
 
+function squareCoordinateTwo() {
+    endIndx = mouse.x
+    endIndy = mouse.y
+
+    console.log(`startx : ${startx} end: ${endIndx}`)
+
+    ctx.fillStyle = ctx.strokeStyle;
+    ctx.strokeRect(startx, starty, Math.abs(startx - endIndx + 1), Math.abs(starty - endIndx + 1));
+}
+
 function drawSqure(event) {
-    let endx = mouse.x;
-    let endy = mouse.y;
+    canvas.addEventListener('mousedown', squareCoordinateTwo, true)
+    canvas.addEventListener('mouseup', function () {
+        canvas.removeEventListener('mousedown', squareCoordinateTwo, true)
+    })
+    
+    // let endx = mouse.x;
+    // let endy = mouse.y;
 
-    console.log(`startx : ${startx} end: ${endx}`)
-    console.log(startx, previousx)
+    // console.log(`startx : ${startx} end: ${endx}`)
 
-    if (previousx != startx || previousy != starty) {
-        ctx.fillStyle = ctx.strokeStyle;
-        ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
-    }
+    // if (previousx != startx || previousy != starty) {
+    //     ctx.fillStyle = ctx.strokeStyle;
+    //     ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
+    // }
 
-
-    previousx = endx;
-    previousy = endy;
-
-    endx = null;
-    endy = null;
-    startx = null;
-    starty = null;
+    // startx = endx
+    // starty = endy
 }
 
 /* Mouse Capturing Work */
@@ -140,65 +149,11 @@ ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 
 function getSize(size){ctx.lineWidth = 2;}
- 
-canvas.addEventListener('mousedown', function(e) {
-    ctx.beginPath();
-    ctx.moveTo(mouse.x, mouse.y);
 
-    // console.log("moveTo", mouse.x)
-    startx = mouse.x
-    starty = mouse.y
-
-    // console.log(checkShape)
-    if (checkShape === true) {
-        console.log('yes im a shape')
-            if (shape === 'circle') {
-                // console.log(mouse.x)
-                // canvas.addEventListener('mousemove', function (e) {
-                //     ctx.fillStyle = ctx.strokeStyle;
-                //     let endx = mouse.x;
-                //     let endy = mouse.y;
-                //     console.log(`onset ${mouse.x} offset ${startx}`)
-                //     console.log(`onset ${mouse.y} offset ${starty}`)
-                //     if (startx != null || starty != null) {
-                //         ctx.arc(startx, starty, 5, 0, 2 * Math.PI);
-                //         ctx.stroke();
-                //     }
-
-                //     startx = null
-                //     starty = null
-
-
-                //     canvas.removeEventListener('mousemove', function () {
-                //         console.log('done')
-                //     }, false);
-                // }, false);
-        
-            } else if (shape === 'square') {
-                console.log('hello0')
-                canvas.addEventListener('mousedown', drawSqure, true)
-
-            } else if (shape === 'triangle') {
-                ctx.fillStyle = ctx.strokeStyle;
-                ctx.fillRect(200, 200, 100, 150);
-            }
-    } else {
-        console.log('yes im pen')
-        canvas.addEventListener('mousemove', onPaint, false);
-    }
-}, false);
- 
-canvas.addEventListener('mouseup', function() {
-    canvas.removeEventListener('mousemove', onPaint, false);
-}, false);
-
-canvas.removeEventListener('mousedown', drawSqure, true);
- 
 var onPaint = function() {
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
 };
-
 
 let clearBtn = document.getElementById('clear');
 clearBtn.addEventListener('click', function() {
@@ -214,21 +169,194 @@ saveBtn.addEventListener('click', function() {
     // save link.href to cloudinary
 }, false);
 
-// square
-// function (e) {
-//     // canvas.addEventListener('mousedown', function (e) {
-//         let endx = mouse.x;
-//         let endy = mouse.y;
+function startPaint() {
+    ctx.beginPath();
+    ctx.moveTo(mouse.x, mouse.y); 
+    canvas.addEventListener('mousemove', onPaint, false);
+}
 
-//         console.log(`startx : ${startx} end: ${endx}`)
+let startmex = null;
+let startmey = null;
 
-//         ctx.fillStyle = ctx.strokeStyle;
-//         ctx.strokeRect(startx, starty, Math.abs(startx - endx + 1), Math.abs(starty - endy + 1));
-        
-//     // }, false);
+function slopeAndDirection(startmex, startmey, endmex, endmey) {
+    let directionx = null;
+    let directiony = null;
 
-//     // if (startx != null || starty != null) {
-//     //     ctx.fillStyle = ctx.strokeStyle;
-//     //     ctx.strokeRect(endx, endy, Math.abs(startx-endx+1), Math.abs(starty-endy+1));
-//     // }
-// }, false);
+    if (startmex < endmex) {
+        directionx = 'positive'
+    } else {
+        directionx = 'negative'
+    }
+
+    if (startmey < endmey) {
+        directiony = 'positive'
+    } else {
+        directiony = 'negative'
+    }
+
+    return {directionx, directiony}
+}
+
+function drawRect(startmex, startmey) {
+    let endmex = mouse.x;
+    let endmey = mouse.y;
+    ctx.fillStyle = ctx.strokeStyle;
+
+    let sd = slopeAndDirection(startmex, startmey, endmex, endmey);
+    let directionx = sd.directionx
+    let directiony = sd.directiony
+
+    console.log(directionx, directiony)
+
+    if (directionx === 'positive' && directiony === 'positive') {
+        console.log('++')
+        ctx.strokeRect(startmex, startmey, Math.abs(startmex - mouse.x + 1), Math.abs(startmey - mouse.y + 1));
+    } else if (directionx === 'negative' && directiony === 'positive') {
+        console.log('-+')
+        console.log(`startmex ${startmex}, endmey ${endmey}`)
+        ctx.strokeRect(endmex, startmey, Math.abs(endmex - startmex + 1), Math.abs(endmey - startmey + 1));
+    } else if (directionx === 'positive' && directiony === 'negative') {
+        console.log('+-')
+        ctx.strokeRect(startmex, endmey, Math.abs(endmex - startmex + 1), Math.abs(endmey - startmey + 1));
+    } else if (directionx === 'negative' && directiony === 'negative') {
+        console.log('--')
+        ctx.strokeRect(endmex, endmey, Math.abs(endmex - startmex + 1), Math.abs(endmey - startmey + 1));
+    }
+
+}
+
+
+function drawCircle(startmex, startmey) {
+    let endmex = mouse.x;
+    let endmey = mouse.y;
+    ctx.beginPath();
+    ctx.fillStyle = ctx.strokeStyle;
+
+    let xdistance = Math.abs(startmex - endmex) + 1;
+    let ydistance = Math.abs(startmey - endmey) + 1;
+
+    let sd = slopeAndDirection(startmex, startmey, endmex, endmey);
+    let directionx = sd.directionx
+    let directiony = sd.directiony
+
+    if (ydistance > xdistance) {
+        if (directionx === 'positive' && directiony === 'positive') {
+            console.log('++')
+            let x = startmex + (xdistance/2)
+            let y = startmey + (ydistance/2)
+            ctx.arc(x, y, ydistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+
+        } else if (directionx === 'negative' && directiony === 'positive') {
+            console.log('-+')
+            let x = endmex + (xdistance/2)
+            let y = startmey + (ydistance/2)
+            ctx.arc(x, y, ydistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        } else if (directionx === 'positive' && directiony === 'negative') {
+            console.log('+-')
+            let x = startmex + (xdistance/2)
+            let y = endmey + (ydistance/2)
+            ctx.arc(x, y, ydistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        } else if (directionx === 'negative' && directiony === 'negative') {
+            console.log('--')
+            let x = endmex + (xdistance/2)
+            let y = endmey + (ydistance/2)
+            ctx.arc(x, y, ydistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        }
+    } else {
+        if (directionx === 'positive' && directiony === 'positive') {
+            console.log('++')
+            let x = startmex + (xdistance/2)
+            let y = startmey + (ydistance/2)
+            ctx.arc(x, y, xdistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+
+        } else if (directionx === 'negative' && directiony === 'positive') {
+            console.log('-+')
+            let x = endmex + (xdistance/2)
+            let y = startmey + (ydistance/2)
+            ctx.arc(x, y, xdistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        } else if (directionx === 'positive' && directiony === 'negative') {
+            console.log('+-')
+            let x = startmex + (xdistance/2)
+            let y = endmey + (ydistance/2)
+            ctx.arc(x, y, xdistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        } else if (directionx === 'negative' && directiony === 'negative') {
+            console.log('--')
+            let x = endmex + (xdistance/2)
+            let y = endmey + (ydistance/2)
+            ctx.arc(x, y, xdistance/2, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        }
+    }
+}
+
+function drawLine(startmex, startmey) {
+    ctx.beginPath();
+    ctx.moveTo(startmex, startmey)
+    ctx.lineTo(mouse.x, mouse.y)
+    ctx.stroke();
+}
+
+function checkForShape() {
+    if (checkShape === true) {
+        if (shape === 'circle') {
+            countClicks += 1;
+            console.log(`countClicks ${countClicks}`)
+            if (countClicks % 2 === 0) {
+                console.log('end',mouse.x, mouse.y)
+                drawCircle(startmex, startmey)
+            } else {
+                console.log('start', mouse.x, mouse.y)
+                startmex = mouse.x
+                startmey = mouse.y
+            }
+
+        } else if (shape === 'square') {
+            // console.log(mouse.x, mouse.y)
+            countClicks += 1;
+
+            if (countClicks % 2 === 0) {
+                console.log('end',mouse.x, mouse.y)
+                drawRect(startmex, startmey)
+            } else {
+                console.log('start', mouse.x, mouse.y)
+                startmex = mouse.x
+                startmey = mouse.y
+            }
+            // canvas.addEventListener('mousedown', drawSqure, true)
+            
+        } else if (shape === 'line') {
+            countClicks += 1;
+
+            if (countClicks % 2 === 0) {
+                console.log('LINE')
+                drawLine(startmex, startmey)
+            } else {
+                startmex = mouse.x
+                startmey = mouse.y
+            }
+            
+        } else if (shape === 'pen') {
+            canvas.addEventListener("mousedown", startPaint, false);
+        }
+    }
+}
+
+canvas.addEventListener("mousedown", startPaint, false);
+canvas.addEventListener('mouseup', function() {
+    canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+
+canvas.addEventListener("click", checkForShape, false)
