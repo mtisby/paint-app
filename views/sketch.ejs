@@ -1,8 +1,4 @@
 <% layout('layouts/boilerplate')%>
-
-
-<h1>hello i am sketch</h1>
-
 <div class="sketchPg">
     <div id="sketch">
         <canvas id="paint"></canvas>
@@ -53,9 +49,23 @@
                 <label for="canvasColor" id="canvasColorValue">#FFFFFF</label>
             </div>
         </div>
+
+        <p>background images</p>
+        <div class="bgimgs">
+            <%bgimgs.forEach((img, i) => {%>
+                <img src="<%=img%>" alt="bgimg" id="img<%=i%>">
+            <%})%>
+
+            <button id="none">none</button>
+        </div>
     </div>
 
     <div>
         <button id="download">download</button>
     </div>
 </div>
+
+<script>
+    var eventObj = '<%- JSON.stringify(bgimgs) %>'; // test is now a valid js object
+</script>
+<script src="/scripts/sketch.js"></script>

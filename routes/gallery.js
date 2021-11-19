@@ -2,7 +2,8 @@ import express from "express"
 import isLoggedIn  from "../middleware/middleware.cjs";
 import multer from "multer"
 import { storage } from "../cloudinary/index.cjs"
-import {Image} from "../models/images.js"
+import { Image } from "../models/images.js"
+import { bgimgs } from "../models/bgimgCollection.js"
 const upload = multer({ storage });
 
 var router = express.Router();
@@ -24,7 +25,6 @@ router.post('/profile', isLoggedIn, (req, res) => {
 
 router.get('/gallery', async (req, res) => {
     const images = await Image.find({});
-    console.log(images)
     res.render("gallery.ejs", {images})
 })
 
@@ -33,7 +33,7 @@ router.get('/gallery/:id', (req, res) => {
 })
 
 router.get('/sketch', isLoggedIn, (req, res) => {
-    res.render("sketch.ejs")
+    res.render("sketch.ejs", {bgimgs})
 })
 
 router.post('/sketch', isLoggedIn, async(req, res) => {

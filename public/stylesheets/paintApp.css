@@ -1,0 +1,18 @@
+.profilePic{
+    width: 8em;
+}
+
+.bgimgs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    width: calc(4em*3 + 2em)
+}
+
+.bgimgs img{
+    width: 3.5em;
+    margin: .5em;
+}
