@@ -1,3 +1,10 @@
 <% layout('layouts/boilerplate')%>
 
 <h3>gallery</h3>
+
+<%images.forEach((img, i) => {%>
+    <%if(img.img != '' || img.img != null) {%>
+        <img src="<%=img.img%>" alt="diffe">
+    <%}%>
+<%})%>
+

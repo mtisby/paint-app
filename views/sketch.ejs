@@ -11,7 +11,10 @@
     <div id="sketchAssests">
         <div>
             <button class="clear" id="clear">clear</button>
-            <button class="save" id="save">save</button>
+            <form action="/sketch" method="post">
+                <input type="text" id='img' name="img" hidden>
+                <button class="save" id="save">save</button>
+            </form>
         </div>
         <div class="pen">
             <h5>pen attributes</h5>

@@ -21,6 +21,7 @@ var mouse = { x: 0, y: 0 };
 let canvasColorPicker = document.getElementById('canvasColor');
 let canvasColor = canvasColorPicker.value;
 canvasColorPicker.addEventListener("change", pickCanvasColor);
+ctx.fillStyle = '#ffffff';
 
 function pickCanvasColor(event) {
     color = event.target.value;
@@ -67,6 +68,7 @@ function download(event) {
     link.delete;
 
     console.log(link.href)
+    console.log(canvas)
 } 
 
 let downloadBtn = document.getElementById('download');
@@ -163,9 +165,10 @@ clearBtn.addEventListener('click', function() {
 let saveBtn = document.getElementById('save');
 saveBtn.addEventListener('click', function() {
     const link = document.createElement('a');
-    link.download = 'download.png';
     link.href = canvas.toDataURL();
 
+    const imglink = document.getElementById('img');
+    imglink.value = link.href;
     // save link.href to cloudinary
 }, false);
 
