@@ -3,8 +3,9 @@
 <h3>gallery</h3>
 
 <%images.forEach((img, i) => {%>
-    <%if(img.img != '' || img.img != null) {%>
-        <img src="<%=img.img%>" alt="diffe">
+    <%if(img.img != ' ' || img.img != null) {%>
+        <a href="/gallery/<%=img._id%>"><img src="<%=img.img%>" alt="galleryImg" class="galleryImgs"></a>
+        <p><%=img.img%></p>
     <%}%>
 <%})%>
 

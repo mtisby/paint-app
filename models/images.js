@@ -3,7 +3,10 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema;
 
 const ImageSchema = new Schema({
-    img: String,
+    img: {
+        type: String,
+        // required: true
+    },
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

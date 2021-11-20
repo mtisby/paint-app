@@ -25,7 +25,7 @@ router.post('/register', asyncWrap(async (req, res) => {
     } catch (e) {
         console.log(e)
         req.flash('error', e.message);
-        res.redirect('register')
+        res.redirect('/register')
     }
     
 }))
@@ -42,7 +42,7 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
     // delete req.session.returnTo;
     // res.redirect(redirectUrl)
     try {
-        res.redirect('profile')
+        res.redirect('/profile')
     } catch (e) {
         console.log(e)
     }

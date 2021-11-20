@@ -58,16 +58,27 @@ function pickPX(event) {
     ctx.lineWidth = px;
 }
 
-function download(event) {
+async function download(event) {
     // var canvas = document.getElementById("paint");
     // var img    = canvas.toDataURL("image/png");
     // document.write('<img src="'+img+'"/>');
     
-    const link = document.createElement('a');
-    link.download = 'download.png';
-    link.href = canvas.toDataURL();
-    link.click();
-    link.delete;
+    // const link = document.createElement('a');
+    // link.download = 'download.png';
+    // link.href = canvas.toDataURL();
+    // link.click();
+    // link.delete;
+
+
+    let blob = await new Promise(resolve=>canvas.toBlob(resolve));
+    let url = URL.createObjectURL(blob);
+    // Won't work here, because
+    // "the request was made in a sandboxed frame whose 'allow-popups' permission is not set."
+    window.open(url);
+    let a = document.createElement('a');
+    a.href = url;
+    a.download = '';
+    a.click();
 
     console.log(link.href)
     console.log(canvas)
@@ -76,6 +87,18 @@ function download(event) {
 let downloadBtn = document.getElementById('download');
 let data = downloadBtn.addEventListener("click", download, false);
 
+
+let saveBtn = document.getElementById('save');
+saveBtn.addEventListener('click', async function() {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/jpeg', 1.0);
+
+    const imglink = document.getElementById('img');
+    imglink.click()
+
+    console.log(imglink)
+    // save link.href to cloudinary
+}, false);
 
 function setPenTip(event) {
     ctx.lineCap = event.target.value;
@@ -151,14 +174,9 @@ clearBtn.addEventListener('click', function() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }, false);
 
-let saveBtn = document.getElementById('save');
-saveBtn.addEventListener('click', function() {
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL();
-
-    const imglink = document.getElementById('img');
-    imglink.value = link.href;
-    // save link.href to cloudinary
+let noneBtn = document.getElementById('none');
+noneBtn.addEventListener('click', function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }, false);
 
 function startPaint() {
@@ -356,6 +374,7 @@ canvas.addEventListener("click", checkForShape, false)
 const img1 = document.getElementById('img0');
 img1.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[0];
     
     background.onload = function () {
@@ -365,6 +384,7 @@ img1.addEventListener('click', function () {
 const img2 = document.getElementById('img1');
 img2.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[1];
     
     background.onload = function () {
@@ -375,6 +395,7 @@ img2.addEventListener('click', function () {
 const img3 = document.getElementById('img2');
 img3.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[2];
     
     background.onload = function () {
@@ -385,6 +406,7 @@ img3.addEventListener('click', function () {
 const img4 = document.getElementById('img3');
 img4.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[3];
     
     background.onload = function () {
@@ -395,6 +417,7 @@ img4.addEventListener('click', function () {
 const img5 = document.getElementById('img4');
 img5.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[4];
     
     background.onload = function () {
@@ -405,6 +428,7 @@ img5.addEventListener('click', function () {
 const img6 = document.getElementById('img5');
 img6.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[5];
     
     background.onload = function () {
@@ -415,6 +439,7 @@ img6.addEventListener('click', function () {
 const img7 = document.getElementById('img6');
 img7.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[6];
     
     background.onload = function () {
@@ -425,6 +450,7 @@ img7.addEventListener('click', function () {
 const img8 = document.getElementById('img7');
 img8.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[7];
     
     background.onload = function () {
@@ -435,9 +461,29 @@ img8.addEventListener('click', function () {
 const img9 = document.getElementById('img8');
 img9.addEventListener('click', function () {
     var background = new Image();
+    background.crossOrigin = "anonymous";
     background.src = bgimgs[8];
     
     background.onload = function () {
         ctx.drawImage(background, 0, 0, 500, 500);
     }
+})
+
+
+// const link = document.createElement('a');
+// link.href = canvas.toDataURL();
+
+// const imglink = document.getElementById('img');
+// imglink.value = link.href;
+
+// console.log(link.href)
+
+let pg = document.querySelector('.sketchPg');
+pg.addEventListener('click', function () {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/jpeg', 1.0);
+
+    const imglink = document.getElementById('img');
+    imglink.value = link.href;
+
 })

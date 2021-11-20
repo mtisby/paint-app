@@ -8,8 +8,9 @@
         <div>
             <button class="clear" id="clear">clear</button>
             <form action="/sketch" method="post">
-                <input type="text" id='img' name="img" hidden>
-                <button class="save" id="save">save</button>
+                <input type="text" id='img' name="img">
+                <input type="text" name="author" id="author" value=<%=username._id%> hidden>
+                <button class="save" id="save" type="submit">save</button>
             </form>
         </div>
         <div class="pen">

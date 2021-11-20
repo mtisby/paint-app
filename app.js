@@ -48,7 +48,7 @@ const __dirname = dirname(__filename);
 
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
 app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'));
 // app.use(mongoSanitize({
