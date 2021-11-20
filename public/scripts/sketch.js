@@ -183,6 +183,7 @@ function startPaint() {
     ctx.beginPath();
     ctx.moveTo(mouse.x, mouse.y); 
     canvas.addEventListener('mousemove', onPaint, false);
+    canvas.addEventListener('touchmove', onPaint, false);
 }
 
 let startmex = null;
@@ -372,7 +373,7 @@ canvas.addEventListener('mouseup', function() {
 
 canvas.addEventListener("touchstart", startPaint, false);
 canvas.addEventListener('touchend', function() {
-    canvas.removeEventListener('mousemove', onPaint, false);
+    canvas.removeEventListener('touchmove', onPaint, false);
 }, false);
 
 canvas.addEventListener("click", checkForShape, false)
