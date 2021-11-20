@@ -42,12 +42,13 @@ router.get('/sketch', isLoggedIn, (req, res) => {
 })
 
 router.post('/sketch', isLoggedIn, async (req, res) => {
-    console.log(req.body)
     const image = new Image(req.body);
     image.author = req.user._id;
     image.img = req.body.img
 
     await image.save();
+
+    req.flash('success', 'Your art has been saved!');
     res.redirect('/home')
 })
 

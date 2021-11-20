@@ -421,60 +421,60 @@ img4.addEventListener('click', function () {
     }
 })
 
-const img5 = document.getElementById('img4');
-img5.addEventListener('click', function () {
-    var background = new Image();
-    background.crossOrigin = "anonymous";
-    background.src = bgimgs[4];
+// const img5 = document.getElementById('img4');
+// img5.addEventListener('click', function () {
+//     var background = new Image();
+//     background.crossOrigin = "anonymous";
+//     background.src = bgimgs[4];
     
-    background.onload = function () {
-        ctx.drawImage(background, 0, 0, 500, 500);
-    }
-})
+//     background.onload = function () {
+//         ctx.drawImage(background, 0, 0, 500, 500);
+//     }
+// })
 
-const img6 = document.getElementById('img5');
-img6.addEventListener('click', function () {
-    var background = new Image();
-    background.crossOrigin = "anonymous";
-    background.src = bgimgs[5];
+// const img6 = document.getElementById('img5');
+// img6.addEventListener('click', function () {
+//     var background = new Image();
+//     background.crossOrigin = "anonymous";
+//     background.src = bgimgs[5];
     
-    background.onload = function () {
-        ctx.drawImage(background, 0, 0, 500, 500);
-    }
-})
+//     background.onload = function () {
+//         ctx.drawImage(background, 0, 0, 500, 500);
+//     }
+// })
 
-const img7 = document.getElementById('img6');
-img7.addEventListener('click', function () {
-    var background = new Image();
-    background.crossOrigin = "anonymous";
-    background.src = bgimgs[6];
+// const img7 = document.getElementById('img6');
+// img7.addEventListener('click', function () {
+//     var background = new Image();
+//     background.crossOrigin = "anonymous";
+//     background.src = bgimgs[6];
     
-    background.onload = function () {
-        ctx.drawImage(background, 0, 0, 500, 500);
-    }
-})
+//     background.onload = function () {
+//         ctx.drawImage(background, 0, 0, 500, 500);
+//     }
+// })
 
-const img8 = document.getElementById('img7');
-img8.addEventListener('click', function () {
-    var background = new Image();
-    background.crossOrigin = "anonymous";
-    background.src = bgimgs[7];
+// const img8 = document.getElementById('img7');
+// img8.addEventListener('click', function () {
+//     var background = new Image();
+//     background.crossOrigin = "anonymous";
+//     background.src = bgimgs[7];
     
-    background.onload = function () {
-        ctx.drawImage(background, 0, 0, 500, 500);
-    }
-})
+//     background.onload = function () {
+//         ctx.drawImage(background, 0, 0, 500, 500);
+//     }
+// })
 
-const img9 = document.getElementById('img8');
-img9.addEventListener('click', function () {
-    var background = new Image();
-    background.crossOrigin = "anonymous";
-    background.src = bgimgs[8];
+// const img9 = document.getElementById('img8');
+// img9.addEventListener('click', function () {
+//     var background = new Image();
+//     background.crossOrigin = "anonymous";
+//     background.src = bgimgs[8];
     
-    background.onload = function () {
-        ctx.drawImage(background, 0, 0, 500, 500);
-    }
-})
+//     background.onload = function () {
+//         ctx.drawImage(background, 0, 0, 500, 500);
+//     }
+// })
 
 
 // const link = document.createElement('a');

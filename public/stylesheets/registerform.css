@@ -1,3 +1,42 @@
-img{
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerPg .inputValues{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerPg img{
     width: 5em;
+    border-radius: 50%;
+}
+
+.profilePicture{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePictureIndiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerPg img:hover{
+    cursor: pointer;
 }

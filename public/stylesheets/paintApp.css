@@ -13,10 +13,34 @@
 }
 
 .bgimgs img{
-    width: 3.5em;
+    width: 5em;
     margin: .5em;
 }
 
+.gallerypg{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery{
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .galleryImgs{
-    width: 5em;
+    width: 7em;
+    margin: 1em;
+}
+
+.bgimgs img:hover{
+    cursor: pointer;
+    box-shadow: 0 0 50px rgba(206, 149, 196, 0.657);
 }
