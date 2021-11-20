@@ -2,6 +2,8 @@
     width: 8em;
 }
 
+/* sketch pad */
+
 .bgimgs{
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +19,8 @@
     margin: .5em;
 }
 
+
+/* gallery page */
 .gallerypg{
     width: 100vw;
     display: flex;
@@ -39,6 +43,27 @@
     width: 7em;
     margin: 1em;
 }
+
+/* profile page */
+
+.profilePg{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100vw;
+}
+
+.profileGallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 70vw;
+}
+
+/* active links */
 
 .bgimgs img:hover{
     cursor: pointer;

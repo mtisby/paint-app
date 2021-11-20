@@ -1,6 +1,17 @@
 <% layout('layouts/boilerplate')%>
 
-<h1>hello i am profile</h1>
-<img src="<%=username.profilePicture%>" alt="profile-picture" class="profilePic">
-<p><%=username%></p>
-<p><%=images%></p>
+<main class="profilePg">
+    <h1>hello i am profile</h1>
+    <div class="profileInfo">
+        <img src="<%=username.profilePicture%>" alt="profile-picture" class="profilePic">
+        <p><%=username.username%></p>
+    </div>
+    
+    <div class="profileGallery">
+        <%images.forEach((img, i) => {%>
+            <%if(img.img != ' ' || img.img != null || img.img != none) {%>
+                <a href="/gallery/<%=img._id%>"><img src="<%=img.img%>" alt="galleryImg" class="galleryImgs"></a>
+            <%}%>
+        <%})%>
+    </div>
+</main>
