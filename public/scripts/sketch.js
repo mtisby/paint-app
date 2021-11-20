@@ -369,6 +369,12 @@ canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
 }, false);
 
+
+canvas.addEventListener("touchstart", startPaint, false);
+canvas.addEventListener('touchend', function() {
+    canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+
 canvas.addEventListener("click", checkForShape, false)
 
 const img1 = document.getElementById('img0');
