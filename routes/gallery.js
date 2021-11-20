@@ -9,10 +9,6 @@ const upload = multer({ storage });
 
 var router = express.Router();
 
-router.get('/home', (req, res) => {
-    res.render("home.ejs")
-})
-
 router.get('/profile', isLoggedIn, async(req, res) => {
     const username = req.user
     const id = username._id
@@ -32,7 +28,6 @@ router.get('/gallery', async (req, res) => {
 router.get('/gallery/:id', async (req, res) => {
     const images = await Image.findById(req.params.id)
     const user = await User.find({ 'author': images.author });
-    console.log(images)
     res.render("gallery_show.ejs", {images, user})
 })
 
@@ -49,7 +44,7 @@ router.post('/sketch', isLoggedIn, async (req, res) => {
     await image.save();
 
     req.flash('success', 'Your art has been saved!');
-    res.redirect('/home')
+    res.redirect('/gallery')
 })
 
 const gallery = router;
