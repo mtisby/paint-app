@@ -8,13 +8,93 @@
 
 
 #paint {
-    border: 1px solid black;  
-    margin-left: auto;
-    margin-right: auto;
-    display: block;}
+    border: .5px solid rgba(128, 128, 128, 0.50);  
+    display: block;
+    margin: 0 2em;
+}
 
 .sketchPg{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
+    margin-top: 2em;;
 }
+
+/* pen attributes */
+.pxSize{
+    width: 4.5em;
+}
+
+.attributes{
+    margin-top: 2em;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.sketchAssests{
+    margin-top: 1.5em;
+}
+
+.btnAssests{
+    margin-top: 5em;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAssests button{
+    margin: 1.5em;
+}
+
+.colorPicker{
+    margin: 1em 0;
+}
+
+.pxPicker{
+    margin: 1em 0;
+}
+
+.penTip{
+    margin: 1em 0;
+}
+
+.drawShapes{
+    margin: 1em 0;
+}
+
+/* canvas attributes */ 
+.bgimgs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    width: calc(8em*2 + 2em)
+}
+
+.bgimgs img{
+    width: 8em;
+    margin: .5em;
+}
+
+.skDesc{
+    font-size: .75em;
+    margin-left: 3em;
+}
+
+/* .save{
+    background-image: url("https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637452518/paint-app/logos/save_bh2gor.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 3em;
+    width: 3em;
+    border: .5px rgba(133, 133, 133, 0.596) solid;
+    border-radius: 50%;;
+} */

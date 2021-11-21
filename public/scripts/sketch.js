@@ -174,11 +174,6 @@ clearBtn.addEventListener('click', function() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }, false);
 
-let noneBtn = document.getElementById('none');
-noneBtn.addEventListener('click', function() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}, false);
-
 function startPaint() {
     ctx.beginPath();
     ctx.moveTo(mouse.x, mouse.y); 

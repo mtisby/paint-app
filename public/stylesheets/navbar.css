@@ -1,0 +1,13 @@
+html{
+    --type-font: 'Black Han Sans', sans-serif;
+    --head-font: 'Fredoka One', cursive;
+}
+
+.navbar-brand{
+    font-family: var(--head-font) !important;
+    font-weight: bold;
+}
+
+.navbar-custom{
+    background-color: white;
+}

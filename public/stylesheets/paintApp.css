@@ -1,6 +1,5 @@
-/* navbar */
-.navbar-custom {
-    background-color: rgb(97, 58, 107) !important;
+html{
+    --head-font: 'Black Han Sans', sans-serif;
 }
 
 /* splash page */
@@ -14,8 +13,8 @@
 }
 
 .banner{
-    /* width: 100vw;
-    height: 100vh; */
+    width: 100vw;
+    /* height: 100vh; */
 }
 
 .tutorial{
@@ -86,24 +85,6 @@
     width: 15em;
     margin: 1em;
 }
-
-/* sketch pad */
-
-.bgimgs{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-
-    width: calc(4em*3 + 2em)
-}
-
-.bgimgs img{
-    width: 5em;
-    margin: .5em;
-}
-
 
 /* gallery page */
 .gallerypg{
