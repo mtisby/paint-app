@@ -80,22 +80,18 @@ this activates MongoDB on your local device
 <h3>The Engineer:</h3>
 Mariel Tisby
 <a href="https://www.linkedin.com/in/mtisby/">
-    <img style="vertical-align:top; margin:4px" src="./public/images/LinkedIn.png" width="2.5%"/>
     <p> LinkedIn </p>
 </a>
 <a href="https://mtisby.github.io/mtisby-website/">
-    <img style="vertical-align:top; margin:4px" src="./public/images/Website.png" width="2.5%"/>
     <p> Website </p>
 </a>
 
 <h3>The Designer:</h3>
 Jane Huntington
 <a href="https://www.linkedin.com/in/jane-huntington/">
-    <img style="vertical-align:top; margin:4px" src="./public/images/LinkedIn.png" width="2.5%"/>
     <p> LinkedIn </p>
 </a>
 <a href="https://www.janehuntington.com/">
-    <img style="vertical-align:top; margin:4px" src="./public/images/Website.png" width="2.5%"/>
     <p> Website </p>
 </a>
 
