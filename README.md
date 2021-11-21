@@ -56,8 +56,6 @@ this activates MongoDB on your local device
     <li>ejs</li>
     <li>express</li>
     <li>express session</li>
-    <li>joi</li>
-    <li>method override</li>
     <li>mongo</li>
     <li>mongoose</li>
     <li>passport</li>
