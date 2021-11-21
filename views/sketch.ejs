@@ -1,71 +1,70 @@
 <% layout('layouts/boilerplate')%>
 <div class="sketchPg">
-    <div class="attributes">
-        <div class="pen">
-            <h5>Pen Attributes</h5>
-            <div class="colorPicker" id="colorPicker">
-                <label for="penColor" id="penColorValue">#000000</label>
-                <input type="color" value="#000000" id="penColor">
+    <div class="colorBg">
+        <div class="attributes">
+            <div class="pen-row">
+                <h5>Pen Attributes</h5>
+                <div class="pen-col">
+                    <div class="colorPicker" id="colorPicker">
+                        <label for="penColor" id="penColorValue">#000000</label>
+                        <input type="color" value="#000000" id="penColor">
+                    </div>
+                    <div class="pxPicker" id="pxPicker">
+                        <label for="pxSize">pen size</label>
+                        <input type="number" value="5" id="pxSize" class="pxSize">
+                    </div>
+                    <div class="penTip" id="penTip">
+                        <label for="size">pen tip</label>
+                        <select name="size" id="size">
+                            <option value="round">round</option>
+                            <option value="butt">square</option>
+                        </select>
+                    </div>
+                    <div class="drawShapes" id="drawShapes">
+                        <label for="shape">shapes</label>
+                        <select name="shape" id="shape">
+                            <option value="pen">pen</option>
+                            <option value="circle">circle</option>
+                            <option value="square">square</option>
+                            <option value="line">line</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="pxPicker" id="pxPicker">
-                <label for="pxSize">pen size</label>
-                <input type="number" value="5" id="pxSize" class="pxSize">
-            </div>
-            <div class="penTip" id="penTip">
-                <label for="size">pen tip</label>
-                <select name="size" id="size">
-                    <option value="round">round</option>
-                    <option value="butt">square</option>
-                </select>
-            </div>
-
-            <div class="drawShapes" id="drawShapes">
-                <label for="shape">shapes</label>
-                <select name="shape" id="shape">
-                    <option value="pen">pen</option>
-                    <option value="circle">circle</option>
-                    <option value="square">square</option>
-                    <option value="line">line</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="btnAssests">
-            <div>
-                <button id="download">download</button>
-            </div>
-            <div>
-                <form action="/sketch" method="post">
-                    <input type="text" id='img' name="img" hidden>
-                    <input type="text" name="author" id="author" value=<%=username._id%> hidden>
-                    <button class="save" id="save" type="submit">save</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="sketch">
-        <canvas id="paint"></canvas>
-    </div>
-    
-    <div id="sketchAssests" class="sketchAssests">
-        <div class="canvas">
-            <h5>Background</h5>
-            <div>
-                <input type="color" value="#FFFFFF" id="canvasColor">
-                <label for="canvasColor" id="canvasColorValue">#FFFFFF</label>
+            <div class="btnAssests">
+                <div>
+                    <button id="download">download</button>
+                </div>
+                <div>
+                    <form action="/sketch" method="post">
+                        <input type="text" id='img' name="img" hidden>
+                        <input type="text" name="author" id="author" value=<%=username._id%> hidden>
+                        <button class="save" id="save" type="submit">save</button>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <br>
-        <p class="skDesc">select a color
-            <br> ... or choose one of these</p>
-        <div class="bgimgs">
-            <%bgimgs.forEach((img, i) => {%>
-                <img src="<%=img%>" alt="bgimg" id="img<%=i%>">
-            <%})%>
-
-            <button class="clear" id="clear">clear canvas</button>
+        <div id="sketch">
+            <canvas id="paint"></canvas>
+        </div>
+        
+        <div id="sketchAssests" class="sketchAssests">
+            <div class="canvas">
+                <h5>Background</h5>
+                <div>
+                    <input type="color" value="#FFFFFF" id="canvasColor">
+                    <label for="canvasColor" id="canvasColorValue">#FFFFFF</label>
+                </div>
+            </div>
+            <br>
+            <p class="skDesc">select a color
+                <br> ... or choose one of these</p>
+            <div class="bgimgs">
+                <%bgimgs.forEach((img, i) => {%>
+                    <img src="<%=img%>" alt="bgimg" id="img<%=i%>">
+                <%})%>
+                <button class="clear" id="clear">clear canvas</button>
+            </div>
         </div>
     </div>
 </div>

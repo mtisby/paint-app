@@ -23,7 +23,6 @@ var mouse = { x: 0, y: 0 };
 let canvasColorPicker = document.getElementById('canvasColor');
 let canvasColor = canvasColorPicker.value;
 canvasColorPicker.addEventListener("change", pickCanvasColor);
-ctx.fillStyle = '#ffffff';
 
 function pickCanvasColor(event) {
     color = event.target.value;

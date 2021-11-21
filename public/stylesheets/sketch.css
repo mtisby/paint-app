@@ -1,5 +1,14 @@
 *{
     font-family:sans-serif;
+
+    --head-font: 'Fredoka One', cursive;
+    --text-font: 'Red Hat Display', sans-serif;
+
+    --orange: #FCBC3F;
+    --cream: #F6F2E7;
+    --cream2: #F8F5EF;
+    --teal: #6EBBBC;
+    --lime-green: #D4D925;
 }
 
 #settings { 
@@ -9,30 +18,74 @@
 
 #paint {
     border: .5px solid rgba(128, 128, 128, 0.50);  
+    background-color: white;
+
     display: block;
     margin: 0 2em;
 }
 
-.sketchPg{
+.colorBg{
+    background-color: var(--teal);
+    width: 85vw;
+
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    padding: 2em 4em;
 
-    margin-top: 2em;;
+    border: 1px solid var(--teal);
+    border-radius: 2.5em;
+}
+
+.sketchPg{
+    width: 100vw;;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2em;
+
+    background-color: var(--cream2);
 }
 
 /* pen attributes */
-.pxSize{
-    width: 4.5em;
+.pen-row h5{
+    font-family: var(--head-font);
 }
 
-.attributes{
-    margin-top: 2em;
-    
+.pen-col{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.pxSize{
+    width: 4.5em;
+    font-family: var(--text-font);
+}
+
+.attributes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+
+
+    background-color: var(--teal);
+    padding: 1.5em;
+    border: 1px solid var(--teal);
+    border-radius: 2.5em;
+}
+
+.attributes label{
+
+    font-family: var(--text-font);
+    font-weight: bold;
+}
+
+.attributes select{
+    font-family: var(--text-font);
+    font-weight: bold;
 }
 
 .sketchAssests{
@@ -50,6 +103,16 @@
 
 .btnAssests button{
     margin: 1.5em;
+
+    background-color: var(--lime-green);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--text-font);
+    border: 1px solid var(--lime-green);
+    border-radius: 2.5em;
+
+    width: 7.5em;
 }
 
 .colorPicker{
@@ -69,6 +132,10 @@
 }
 
 /* canvas attributes */ 
+.canvas h5{
+    font-family: var(--head-font);
+}
+
 .bgimgs{
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +153,10 @@
 
 .skDesc{
     font-size: .75em;
+    font-weight: bold;
     margin-left: 3em;
+
+    font-family: var(--text-font);
 }
 
 /* .save{

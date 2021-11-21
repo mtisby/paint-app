@@ -10,4 +10,9 @@ html{
 
 .navbar-custom{
     background-color: white;
+    width: 100vw;
+}
+
+#nav-head{
+    font-family: var(--head-font);
 }

@@ -1,5 +1,19 @@
 html{
-    --head-font: 'Black Han Sans', sans-serif;
+    --head-font: 'Fredoka One', cursive;
+    --text-font: 'Red Hat Display', sans-serif;
+
+    --orange: #FCBC3F;
+    --cream: #F6F2E7;
+    --cream2: #F8F5EF;
+    --teal: #6EBBBC;
+    --lime-green: #D4D925;
+
+
+    margin: 0;
+}
+
+body{
+    margin: 0;
 }
 
 /* splash page */
@@ -12,17 +26,118 @@ html{
     justify-content: center;
 }
 
+.getStarted{
+    z-index: 4;
+    margin-left: 3em;
+    height: 55vh;
+    width: 109%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.getStarted h3{
+    font-family: var(--head-font);
+}
+
+.getStarted a{
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 2em;
+    padding: .25em 1em;
+
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 .banner{
     width: 100vw;
-    /* height: 100vh; */
+    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637522227/paint-app/2021-11-21_11-12-15_Trim_SparkVideo_tgx8fb.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70vh;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.bark{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.bark img{
+    width: 20em;
 }
 
 .tutorial{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--teal);
+}
+
+.zindex2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+
+    background-color: var(--cream2);
+    border: 1px solid var(--cream2) ;
+    border-radius: 2.5em;
+    
+    height: 75vh;
+    width: 75vw;
+}
+
+.zindex2 h1{
+    font-family: var(--head-font);
+    margin-top: 0;
+}
+
+.tutorialRow{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.tutorialLeft{
+    width: 20vw;
+    margin: 0 1em;
+}
+
+.tutorialLeft li{
+    font-family: var(--text-font);
+    font-size: 1.25em;
+}
+
+
+.tutorialRight{
+    width: 50vw;
+}
+
+.aboutUs h1{
+    margin-top: 1.5em;
+    font-family: var(--head-font);
 }
 
 .aboutUs{
@@ -31,6 +146,10 @@ html{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    width: 100vw;
+
+    background-color: var(--cream);
 }
 
 .people{
@@ -39,18 +158,39 @@ html{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    width: 25vw;
+    margin: 2.5em;
 }
 
 .mariel{
-    margin: 2.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2.5em;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2.5em;
+
+    transition: 1s;
 }
 
-.jane{
-    margin: 2.5em;
+.mariel p{
+    text-align: center;
 }
 
-.people img{
-    width: 10em;
+.mariel .name{
+    font-size: 2em;
+}
+
+.marielProfilePic{
+    width: 15em;
+    margin: 1.5em;
+    margin-top: 0;
+    border-radius: 50%;
 }
 
 .contactus{
@@ -59,10 +199,17 @@ html{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    background-color: var(--orange);
+
+    margin: 0;
+    margin-top: 2em;
+    z-index: 10;
 }
 
 .contactus img{
     width: 2em;
+    margin: 1.5em;
 }
 
 .inCollab{
@@ -71,6 +218,13 @@ html{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    height: 40vh;
+    width: 100vw;
+    background-color: var(--teal);
+}
+
+.inCollab h3{
+    font-family: var(--head-font);
 }
 
 .incollablogos{
@@ -84,6 +238,7 @@ html{
 .incollablogos img{
     width: 15em;
     margin: 1em;
+    margin-bottom: 2em;
 }
 
 /* gallery page */
@@ -98,6 +253,7 @@ html{
 
 .gallerypg h3{
     margin: 2em;
+    font-family: var(--head-font);
 }
 
 .gallery{
@@ -112,6 +268,8 @@ html{
 .galleryImgs{
     width: 15em;
     margin: 1em;
+
+    transition: 1s;
 }
 
 /* profile page */
@@ -167,4 +325,12 @@ html{
 .bgimgs img:hover{
     cursor: pointer;
     box-shadow: 0 0 50px rgba(206, 149, 196, 0.657);
+}
+
+.mariel:hover{
+    box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
+}
+
+.galleryImgs:hover{
+    box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
 }
