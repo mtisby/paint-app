@@ -74,7 +74,7 @@ this activates MongoDB on your local device
 ## 🔜 What's next for Poodle Doodle
 <p>Up next we will be adding more social features such as messaging, sharing, and following fellow Doodlers!</p>
 
-## ✨ Contact Us
+## ✨ Contact Me
 <h3>The Engineer:</h3>
 Mariel Tisby
 <a href="https://www.linkedin.com/in/mtisby/">
@@ -84,12 +84,4 @@ Mariel Tisby
     <p> Website </p>
 </a>
 
-<h3>The Designer:</h3>
-Jane Huntington
-<a href="https://www.linkedin.com/in/jane-huntington/">
-    <p> LinkedIn </p>
-</a>
-<a href="https://www.janehuntington.com/">
-    <p> Website </p>
-</a>
 
