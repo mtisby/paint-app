@@ -85,7 +85,6 @@ body{
 .zindex2{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
@@ -115,19 +114,74 @@ body{
 }
 
 .tutorialLeft{
-    width: 20vw;
+    width: 20em;
     margin: 0 1em;
 }
 
 .tutorialLeft li{
     font-family: var(--text-font);
-    font-size: 1.25em;
+    font-size: 1.5em;
 }
 
+@media (max-width: 1299px) { 
+    .tutorial{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--lavendar);
+    }
+    
+    .zindex2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    
+        background-color: var(--cream2);
+        border: 1px solid var(--cream2) ;
+        border-radius: 2.5em;
+        
+        height: 75vh;
+        width: 75vw;
+    }
+    
+    .zindex2 h1{
+        font-family: var(--head-font);
+        margin-top: 0;
+    }
+    
+    .tutorialRow{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        margin: 1em;
+        margin-top: 2em;
+    }
+    
+    .tutorialLeft{
+        width: 17em;
+        margin: 0 1em;
+    }
+    
+    .tutorialLeft li{
+        font-family: var(--text-font);
+        font-size: 1em;
+    }
+ }
 
-.tutorialRight{
-    width: 50vw;
-}
+
+
+/* .tutorialRight{
+    
+} */
 
 .tutorialRight iframe{
     width: 45vw;
