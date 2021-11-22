@@ -27,7 +27,7 @@ import { User } from './models/user.js'
 import { gallery } from "./routes/gallery.js"
 import { userRoutes } from "./routes/users.js"
 
-const dbUrl = 'mongodb://localhost:27017/paint-app' || process.env.DB_URL;
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/paint-app';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
