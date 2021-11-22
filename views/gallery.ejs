@@ -2,10 +2,8 @@
 
 
 <main class="gallerypg">
-    <h3>Gallery</h3>
     <div class="gallery">
-    
-    <%images.forEach((img, i) => {%>
+    <%images.slice().reverse().forEach((img, i) => {%>
         <%if(img.img != ' ' || img.img != null || img.img != none) {%>
             <a href="/gallery/<%=img._id%>"><img src="<%=img.img%>" alt="galleryImg" class="galleryImgs"></a>
         <%}%>

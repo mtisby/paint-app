@@ -39,4 +39,5 @@
 
 .registerPg img:hover{
     cursor: pointer;
+    border: 3px solid rgb(178, 178, 240);
 }

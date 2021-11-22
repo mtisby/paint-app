@@ -50,7 +50,7 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
 
 router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/home');
+    res.redirect('/');
 })
 
 const userRoutes = router

@@ -1,13 +1,18 @@
 html{
     --head-font: 'Fredoka One', cursive;
     --text-font: 'Red Hat Display', sans-serif;
-
-    --orange: #FCBC3F;
-    --cream: #F6F2E7;
+  
+    --purple: #A259FF;
+    --lavendar: #C08EFF;
+    --blood-orange: #F24E1E;
+    --salmon: #FF7262;
+    --blue: #1ABCFE;
+    --seafoam: #0ACF83;
+    --light-green: #81E08A;
+    --dark-green: #06A065;
+    --mauv: #EA79A8;
+    --fuchsia: #FF2E86;
     --cream2: #F8F5EF;
-    --teal: #6EBBBC;
-    --lime-green: #D4D925;
-
 
     margin: 0;
 }
@@ -19,73 +24,60 @@ body{
 /* splash page */
 .splashPg{
     width: 100vw;
+    top: 0px;
+}
 
+.banner{
+    top: 10px;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: 1;
+}
+
+.intro-gif{
+    margin: 0;
+}
+
+.getStarted{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.getStarted{
-    z-index: 4;
-    margin-left: 3em;
-    height: 55vh;
-    width: 109%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-}
-
 .getStarted h3{
     font-family: var(--head-font);
+    font-size: 2em;
 }
 
 .getStarted a{
-    background-color: var(--orange);
-    border: 1px solid var(--orange);
+    background-color: var(--blood-orange);
+    border: 1px solid var(--blood-orange);
     border-radius: 2em;
     padding: .25em 1em;
+    margin: 1.5em;
 
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-.banner{
-    width: 100vw;
-    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637522227/paint-app/2021-11-21_11-12-15_Trim_SparkVideo_tgx8fb.gif');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 70vh;
-
-    display: flex;
-    align-items: flex-start;
-}
-
-.bark{
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-}
-
-.bark img{
-    width: 20em;
-}
 
 .tutorial{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
     width: 100vw;
     height: 100vh;
-    background-color: var(--teal);
+    background-color: var(--lavendar);
 }
 
 .zindex2{
@@ -138,6 +130,7 @@ body{
 .aboutUs h1{
     margin-top: 1.5em;
     font-family: var(--head-font);
+    color: rgb(71, 71, 71);
 }
 
 .aboutUs{
@@ -149,7 +142,10 @@ body{
 
     width: 100vw;
 
-    background-color: var(--cream);
+    margin-top: 2em;
+    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637547646/paint-app/Untitled_6_oaeouc.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .people{
@@ -180,6 +176,7 @@ body{
 
 .mariel p{
     text-align: center;
+    font-family: var(--text-font);
 }
 
 .mariel .name{
@@ -191,6 +188,7 @@ body{
     margin: 1.5em;
     margin-top: 0;
     border-radius: 50%;
+    border: 5px solid var(--seafoam);
 }
 
 .contactus{
@@ -199,8 +197,6 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-    background-color: var(--orange);
 
     margin: 0;
     margin-top: 2em;
@@ -218,9 +214,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 40vh;
     width: 100vw;
-    background-color: var(--teal);
 }
 
 .inCollab h3{
@@ -236,13 +230,18 @@ body{
 }
 
 .incollablogos img{
-    width: 15em;
+    width: 10em;
     margin: 1em;
     margin-bottom: 2em;
 }
 
+#js-logo{
+    width:5em;
+}
+
 /* gallery page */
 .gallerypg{
+    margin-top: 2em;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -269,7 +268,7 @@ body{
     width: 15em;
     margin: 1em;
 
-    transition: 1s;
+    transition: .25s;
 }
 
 /* profile page */
@@ -288,15 +287,23 @@ body{
 
 .profileInfo{
     margin-top: 5em;
+    padding: 2em;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 2.5em;
+
+    color: white;
 }
 
 .profileInfo img{
     width: 15em;
+    border: 8px solid var(--fuchsia);
     border-radius: 50%;
 }
 
@@ -321,16 +328,24 @@ body{
 }
 
 /* active links */
-
-.bgimgs img:hover{
-    cursor: pointer;
-    box-shadow: 0 0 50px rgba(206, 149, 196, 0.657);
-}
-
 .mariel:hover{
     box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
 }
 
 .galleryImgs:hover{
-    box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
+    border: 5px solid var(--seafoam)
+}
+
+.contactus img:hover{
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+.incollablogos img:hover{
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

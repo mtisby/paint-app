@@ -4,11 +4,20 @@
     --head-font: 'Fredoka One', cursive;
     --text-font: 'Red Hat Display', sans-serif;
 
-    --orange: #FCBC3F;
-    --cream: #F6F2E7;
+    --purple: #A259FF;
+    --lavendar: #C08EFF;
+    --blood-orange: #F24E1E;
+    --salmon: #FF7262;
+    --blue: #1ABCFE;
+    --seafoam: #0ACF83;
+    --light-green: #81E08A;
+    --dark-green: #06A065;
+    --mauv: #EA79A8;
+    --fuchsia: #FF2E86;
     --cream2: #F8F5EF;
-    --teal: #6EBBBC;
-    --lime-green: #D4D925;
+
+    --grey: #E5E5E5;
+    --grey2: #c3c3c3;
 }
 
 #settings { 
@@ -25,26 +34,27 @@
 }
 
 .colorBg{
-    background-color: var(--teal);
-    width: 85vw;
+    background-color: white;
+    width: 75em;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 2em 4em;
 
-    border: 1px solid var(--teal);
+    border: 1px solid white;
     border-radius: 2.5em;
 }
 
 .sketchPg{
-    width: 100vw;;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-top: 2em;
+    padding-bottom: 2em;
 
-    background-color: var(--cream2);
+    background-color: var(--grey);
 }
 
 /* pen attributes */
@@ -71,9 +81,9 @@
     justify-content: center;
 
 
-    background-color: var(--teal);
+    background-color: var(--grey);
     padding: 1.5em;
-    border: 1px solid var(--teal);
+    border: 1px solid var(--grey);
     border-radius: 2.5em;
 }
 
@@ -88,10 +98,6 @@
     font-weight: bold;
 }
 
-.sketchAssests{
-    margin-top: 1.5em;
-}
-
 .btnAssests{
     margin-top: 5em;
     
@@ -104,12 +110,12 @@
 .btnAssests button{
     margin: 1.5em;
 
-    background-color: var(--lime-green);
-    color: white;
+    background-color: var(--lavendar);
+    color: black;
     text-decoration: none;
     font-weight: bold;
     font-family: var(--text-font);
-    border: 1px solid var(--lime-green);
+    border: 1px solid var(--lavendar);
     border-radius: 2.5em;
 
     width: 7.5em;
@@ -136,6 +142,33 @@
     font-family: var(--head-font);
 }
 
+.sketchAssests{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+
+    background-color: var(--grey);
+    padding: 1.5em;
+    border: 1px solid var(--grey);
+    border-radius: 2.5em;
+}
+
+.sketchAssests button{
+    margin: 1.5em;
+
+    background-color: var(--lavendar);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--text-font);
+    border: 1px solid var(--lavendar);
+    border-radius: 2.5em;
+
+    width: 7.5em;
+}
+
 .bgimgs{
     display: flex;
     flex-wrap: wrap;
@@ -159,12 +192,8 @@
     font-family: var(--text-font);
 }
 
-/* .save{
-    background-image: url("https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637452518/paint-app/logos/save_bh2gor.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 3em;
-    width: 3em;
-    border: .5px rgba(133, 133, 133, 0.596) solid;
-    border-radius: 50%;;
-} */
+
+.bgimgs img:hover{
+    cursor: pointer;
+    border: 4px solid var(--teal)
+}

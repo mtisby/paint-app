@@ -13,28 +13,24 @@ html{
     --mauv: #EA79A8;
     --fuchsia: #FF2E86;
     --cream2: #F8F5EF;
-    --ash: #2C2C2C;
-
 }
 
 .navbar-brand{
     font-family: var(--head-font) !important;
+    font-weight: bold;
 }
 
-#brand{
-    color: var(--mauv);
-}
 
 #nav-head{
-    font-family: var(--text-font);
-    color: white;
-    font-weight: 200;
     margin-top: 1.5em;
+    font-family: var(--text-font);
+    color: black;
 }
 
 #nav-bg{
-    background-color: var(--ash);
+    background-color: white;
 }
+
 
 #auth #nav-head{
     font-family: var(--text-font);
@@ -46,3 +42,8 @@ html{
     margin: 0 .5em;
     padding: .5em 1em;
 }
+/* #splash{
+    font-family: var(--head-font);
+    color: black;
+    background-color: var(--seafoam);
+} */
