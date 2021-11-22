@@ -12,7 +12,7 @@ Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bas
 
 <ul>
     <li>Create an account</li>
-    <li>Go to the Sketchpad tab</li>
+    <li>Go to the Sketch tab</li>
     <li>Select a photo or color for your background</li>
     <li>Select a pen or shape tool </li>
     <li>Select a color </li>
