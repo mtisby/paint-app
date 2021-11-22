@@ -24,8 +24,11 @@ clone the repository and run the following in your terminal:
 ```bash
 > npm i
 ```
-this starts the server
-
+this installs all neccessary packages
+next, run the following:
+```bash
+> node app.js
+```
 in a separate terminal run the following: 
 ```bash
 > mongod
