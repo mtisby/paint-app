@@ -26,9 +26,12 @@ router.get('/gallery', async (req, res) => {
 })
 
 router.get('/gallery/:id', async (req, res) => {
-    const images = await Image.findById(req.params.id)
-    const user = await User.find({ 'author': images.author });
-    res.render("gallery_show.ejs", {images, user})
+    const images = await Image.findById(req.params.id).populate({
+        path: 'author'
+    })
+
+    
+    res.render("gallery_show.ejs", {images})
 })
 
 router.get('/sketch', isLoggedIn, (req, res) => {

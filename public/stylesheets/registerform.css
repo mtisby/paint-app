@@ -1,8 +1,33 @@
+html{
+    --head-font: 'Fredoka One', cursive;
+    --text-font: 'Red Hat Display', sans-serif;
+
+    --purple: #A259FF;
+    --lavendar: #C08EFF;
+    --blood-orange: #F24E1E;
+    --salmon: #FF7262;
+    --blue: #1ABCFE;
+    --seafoam: #0ACF83;
+    --light-green: #81E08A;
+    --dark-green: #06A065;
+    --mauv: #EA79A8;
+    --fuchsia: #FF2E86;
+    --cream2: #F8F5EF;
+
+    --grey: #E5E5E5;
+    --grey2: #c3c3c3;
+}
+
 .registerPg{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    background-color: var(--grey);
+
+    height: 100vh;
+    padding-top: 4em;
 }
 
 .registerPg .inputValues{
@@ -40,4 +65,49 @@
 .registerPg img:hover{
     cursor: pointer;
     border: 3px solid rgb(178, 178, 240);
+}
+
+.container{
+    margin: 2em;
+    padding: 2em;
+
+    width: 35vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 2.5em;
+
+}
+
+.container-login{
+    margin: 0;
+    padding: 2em;
+
+    width: 30vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 2.5em;
+
+}
+
+.welcome h1{
+    font-family: var(--head-font);
+    margin: .5em;
+}
+
+#authBtn{
+    background-color: var(--seafoam);
+    color: white;
+    font-weight: 400;
 }

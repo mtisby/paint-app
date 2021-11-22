@@ -2,49 +2,51 @@
 <link href="/stylesheets/registerform.css" rel="stylesheet">
 
 <main class="registerPg">
-    <div class="welcome">
-        <h1>Register</h1>
+    <div class="container">
+        <div class="welcome">
+            <h1>Register</h1>
+        </div>
+        <form action="/register" method="POST" class="validated-form" novalidate>
+            <div class="mb-3 profilePicture">
+                <h5>Choose a Profile Picture</h5>
+                <select name="profilePicture" id="profilePicture" hidden>
+                    <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348422/paint-app/dog-2_faisfq.jpg">dog1</option>
+                    <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-4_bpgtwf.jpg">dog2</option>
+                    <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-5_tslq6x.jpg">dog3</option>
+                </select>
+        
+                <div class="profilePictureIndiv">
+                    <img id="dog1Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348422/paint-app/dog-2_faisfq.jpg" alt="dog1">
+                    <img id="dog2Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-4_bpgtwf.jpg" alt="dog2">
+                    <img id="dog3Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-5_tslq6x.jpg" alt="dog3">
+                </div>
+            </div>
+            <div class="inputValues">
+                <div class="mb-3">
+                    <!-- <label class="form-label" for="username">Username</label> -->
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <!-- <label class="form-label" for="email">Email</label> -->
+                    <input class="form-control" type="email" id="email" placeholder="Email" name="email" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <!-- <label class="form-label" for="password">Password</label> -->
+                    <input class="form-control" placeholder="Password" type="password" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="buttonDiv"><button class="btn" id="authBtn">Register</button></div>
+        </form>
     </div>
-    <form action="/register" method="POST" class="validated-form" novalidate>
-        <div class="mb-3 profilePicture">
-            <h5>Choose a Profile Picture</h5>
-            <select name="profilePicture" id="profilePicture" hidden>
-                <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348422/paint-app/dog-2_faisfq.jpg">dog1</option>
-                <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-4_bpgtwf.jpg">dog2</option>
-                <option value="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-5_tslq6x.jpg">dog3</option>
-            </select>
-    
-            <div class="profilePictureIndiv">
-                <img id="dog1Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348422/paint-app/dog-2_faisfq.jpg" alt="dog1">
-                <img id="dog2Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-4_bpgtwf.jpg" alt="dog2">
-                <img id="dog3Img" src="https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637348414/paint-app/dog-5_tslq6x.jpg" alt="dog3">
-            </div>
-        </div>
-        <div class="inputValues">
-            <div class="mb-3">
-                <!-- <label class="form-label" for="username">Username</label> -->
-                <input class="form-control" type="text" id="username" name="username" placeholder="Username" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <!-- <label class="form-label" for="email">Email</label> -->
-                <input class="form-control" type="email" id="email" placeholder="Email" name="email" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <!-- <label class="form-label" for="password">Password</label> -->
-                <input class="form-control" placeholder="Password" type="password" id="password" name="password" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-        </div>
-        <div class="buttonDiv"><button class="btn btn-success">Register</button></div>
-    </form>
 </main>
   
 <script src="/scripts/registerform.js"></script>

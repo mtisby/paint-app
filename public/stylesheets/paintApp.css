@@ -13,6 +13,8 @@ html{
     --mauv: #EA79A8;
     --fuchsia: #FF2E86;
     --cream2: #F8F5EF;
+    --grey: #E5E5E5;
+    --grey2: #c3c3c3;
 
     margin: 0;
 }
@@ -125,6 +127,10 @@ body{
 
 .tutorialRight{
     width: 50vw;
+}
+
+.tutorialRight iframe{
+    width: 45vw;
 }
 
 .aboutUs h1{
@@ -326,6 +332,79 @@ body{
 .profileGallery img{
     width: 18em;
 }
+
+.getDoodling{
+    font-size: 2em;
+    font-family: var(--head-font);
+    text-decoration: none;
+    color: var(--seafoam);
+
+    margin-top: 6em;
+}
+
+/* gallery show */
+.galleryShowPg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--grey);
+}
+
+.galleryShowPg h3{
+    margin-top: 2em;
+    font-family: var(--head-font);
+}
+
+.galleryShowPg a{
+    font-family: var(--text-font);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.backtoGall{
+    margin-top: 10em;
+}
+
+
+.border-galleryShow{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 2em 0;
+    padding: 2em;
+
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2.5em;
+}
+
+.border-galleryShow .left img{
+    width: 30em;
+    margin: 1em;
+}
+
+
+.border-galleryShow .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.border-galleryShow .right p{
+    font-family: var(--head-font);
+}
+
+.border-galleryShow .right img{
+    width: 15em;
+    border: 8px solid var(--fuchsia);
+    border-radius: 50%;
+}
+
 
 /* active links */
 .mariel:hover{

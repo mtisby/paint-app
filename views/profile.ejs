@@ -12,5 +12,12 @@
                 <a href="/gallery/<%=img._id%>"><img src="<%=img.img%>" alt="galleryImg" class="galleryImgs"></a>
             <%}%>
         <%})%>
+
+
     </div>
+
+    <script>
+        var imgArr = '<%- JSON.stringify(images) %>'; // test is now a valid js object
+    </script>
+    <script src="/scripts/profile.js"></script>
 </main>

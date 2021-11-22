@@ -1,4 +1,16 @@
 <% layout('layouts/boilerplate')%>
 
-<img src="<%=images.img%>" alt="image">
-<p><%=images.img%></p>
+<div class="galleryShowPg">
+    <h3>Doodled By: <%=images.author.username%></h3>
+    <div class="border-galleryShow">
+        <div class="left"><img src="<%=images.img%>" alt="image"></div>
+        <div class="right">
+            <img src="<%=images.author.profilePicture%>" alt="user-profile">
+            <p><%=images.author.username%></p>
+
+            <div class="backtoGall">
+                <a href="/gallery">back to gallery</a>
+            </div>
+        </div>
+    </div>
+</div>

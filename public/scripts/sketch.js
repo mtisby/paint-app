@@ -24,6 +24,9 @@ let canvasColorPicker = document.getElementById('canvasColor');
 let canvasColor = canvasColorPicker.value;
 canvasColorPicker.addEventListener("change", pickCanvasColor);
 
+ctx.fillStyle = '#FFFFFF';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 function pickCanvasColor(event) {
     color = event.target.value;
     ctx.fillStyle = color;

@@ -1,6 +1,4 @@
 *{
-    font-family:sans-serif;
-
     --head-font: 'Fredoka One', cursive;
     --text-font: 'Red Hat Display', sans-serif;
 
@@ -110,12 +108,12 @@
 .btnAssests button{
     margin: 1.5em;
 
-    background-color: var(--lavendar);
+    background-color: var(--blue);
     color: black;
     text-decoration: none;
     font-weight: bold;
     font-family: var(--text-font);
-    border: 1px solid var(--lavendar);
+    border: 1px solid var(--blue);
     border-radius: 2.5em;
 
     width: 7.5em;
@@ -158,12 +156,12 @@
 .sketchAssests button{
     margin: 1.5em;
 
-    background-color: var(--lavendar);
+    background-color: var(--blue);
     color: black;
     text-decoration: none;
     font-weight: bold;
     font-family: var(--text-font);
-    border: 1px solid var(--lavendar);
+    border: 1px solid var(--blue);
     border-radius: 2.5em;
 
     width: 7.5em;
