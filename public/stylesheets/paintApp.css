@@ -78,8 +78,9 @@ body{
     justify-content: center;
 
     width: 100vw;
-    height: 100vh;
     background-color: var(--lavendar);
+
+    padding: 5em 0;
 }
 
 .zindex2{
@@ -123,47 +124,15 @@ body{
     font-size: 1.5em;
 }
 
+.tutorialRight iframe{
+    width: 45vw;
+}
+
 @media (max-width: 1299px) { 
-    .tutorial{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--lavendar);
-    }
-    
-    .zindex2{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    
-    
-        background-color: var(--cream2);
-        border: 1px solid var(--cream2) ;
-        border-radius: 2.5em;
-        
-        height: 75vh;
-        width: 75vw;
-    }
-    
+ 
     .zindex2 h1{
         font-family: var(--head-font);
-        margin-top: 0;
-    }
-    
-    .tutorialRow{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    
-        margin: 1em;
-        margin-top: 2em;
+        margin-top: 1em;
     }
     
     .tutorialLeft{
@@ -183,8 +152,46 @@ body{
     
 } */
 
-.tutorialRight iframe{
-    width: 45vw;
+
+
+.tut-gallery{
+    width: 100vw;
+    margin: 4em 0;
+    padding: 3em 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637576371/paint-app/bg-3_j6k458.png');
+    background-repeat: no-repeat;
+    background-size: fill;
+    
+}
+
+.tut-gallery img{
+    width: 25em;
+}
+
+.tut-gallery-img{
+    background-color: var(--fuchsia);
+    border: 18px solid var(--seafoam);
+    margin: 1em;
+}
+
+.tut-gallery .descript{
+    font-family: var(--head-font);
+    font-size: 1.5em;
+    width: 50vw;
+}
+
+.descript p{
+    font-family: var(--text-font);
+}
+
+.descript a{
+    text-decoration: none;
+    color: var(--seafoam)
 }
 
 .aboutUs h1{
