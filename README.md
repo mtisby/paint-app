@@ -8,6 +8,8 @@ Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bas
 
 <img width="50%" src="/public/images/Poodle_Doodle_-_Google_Chrome_2021-11-21_20-21-49_SparkVideo (1).gif" alt="app-preview"/>
 
+<a href="https://www.youtube.com/watch?v=EAaKhfzaxYA&ab_channel=MTisby">view the full video here</a>
+
 <ul>
     <li>Create an account</li>
     <li>Go to the Sketchpad tab</li>
