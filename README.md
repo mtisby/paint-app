@@ -6,7 +6,7 @@ Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bas
 ## 💻 What it does
 <p>Poodle Doodle is a web app that allows you to doodle and to checkout other people's doodles. Whether you want to draw with a pen, or use shapes, Poodle Doodle can make your visions come to life.</p>
 
-<img width="50%" src="#" alt="app-preview"/>
+<img width="50%" src="/public/images/Poodle_Doodle_-_Google_Chrome_2021-11-21_20-21-49_SparkVideo (1).gif" alt="app-preview"/>
 
 <ul>
     <li>Create an account</li>
