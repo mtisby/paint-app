@@ -59,8 +59,8 @@ body{
 }
 
 .getStarted a{
-    background-color: var(--blood-orange);
-    border: 1px solid var(--blood-orange);
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
     border-radius: 2em;
     padding: .25em 1em;
     margin: 1.5em;
