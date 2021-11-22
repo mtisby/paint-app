@@ -1,6 +1,6 @@
 <a href="https://pacific-bastion-50258.herokuapp.com/"><img src="/public/images/logo-for-github.png"></a>
 
-<p>This project is a web app to release your inner child. 
+<p>This project is a web app made to release your inner child. 
 Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bastion-50258.herokuapp.com/">here</a></p>
 
 ## 💻 What it does
