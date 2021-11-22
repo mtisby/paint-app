@@ -11,15 +11,24 @@ function getImg(event) {
 
     if (event.target.id === "dog1Img") {
         console.log('dog1')
-        selector.selectedIndex  = 0;
+        selector.selectedIndex = 0;
+        dog1Img.classList.add('profileBorder')
+        dog2Img.classList.remove('profileBorder')
+        dog3Img.classList.remove('profileBorder')
         console.log(selector.value)
     } else if (event.target.id === "dog2Img") {
         console.log('dog2')
-        selector.selectedIndex  = 1;
+        selector.selectedIndex = 1;
+        dog1Img.classList.remove('profileBorder')
+        dog2Img.classList.add('profileBorder')
+        dog3Img.classList.remove('profileBorder')
         console.log(selector.value)
     } else {
         console.log('dog3')
-        selector.selectedIndex  = 2;
+        selector.selectedIndex = 2;
+        dog1Img.classList.remove('profileBorder')
+        dog2Img.classList.remove('profileBorder')
+        dog3Img.classList.add('profileBorder')
         console.log(selector.value)
     }
 }

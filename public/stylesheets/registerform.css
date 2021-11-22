@@ -62,11 +62,6 @@ html{
     align-items: center;
 }
 
-.registerPg img:hover{
-    cursor: pointer;
-    border: 3px solid rgb(178, 178, 240);
-}
-
 .container{
     margin: 2em;
     padding: 2em;
@@ -110,4 +105,13 @@ html{
     background-color: var(--seafoam);
     color: white;
     font-weight: 400;
+}
+
+.profileBorder{
+    border: 5px solid var(--blue);
+}
+
+.registerPg img:hover{
+    cursor: pointer;
+    transform: translateY(-0.25em);
 }

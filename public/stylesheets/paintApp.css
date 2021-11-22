@@ -163,7 +163,7 @@ body{
     justify-content: center;
     align-items: center;
 
-    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637576371/paint-app/bg-3_j6k458.png');
+    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637612505/paint-app/bg-5_p1mhyi.png');
     background-repeat: no-repeat;
     background-size: fill;
     
@@ -407,10 +407,11 @@ body{
 .galleryShowPg{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     background-color: var(--grey);
+    height: 100vh;
 }
 
 .galleryShowPg h3{
