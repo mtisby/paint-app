@@ -20,20 +20,19 @@ Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bas
 </ul>
 
 ## 🔨 Installation
-clone the repository and run the following in your terminal:
+Clone the repository and run the following in your terminal:
 ```bash
 > npm i
 ```
-this installs all neccessary packages
-next, run the following:
+This installs all neccessary packages. Mext, run the following:
 ```bash
 > node app.js
 ```
-in a separate terminal run the following: 
+In a separate terminal run the following: 
 ```bash
 > mongod
 ```
-this activates MongoDB on your local device
+This activates MongoDB on your local device; however, note that cloning this repo to your local device means that the database will be empty. To see the full effect of the web app, create an account to put your first bit of data into your local database.
 
 ## 🔨 How we built it
 <h2>Tools Used</h2>
