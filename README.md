@@ -24,8 +24,7 @@ clone the repository and run the following in your terminal:
 ```bash
 > npm i
 ```
-this installs all neccessary packages
-next, run the following:
+this installs all neccessary packages. Mext, run the following:
 ```bash
 > node app.js
 ```
