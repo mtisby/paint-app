@@ -411,7 +411,6 @@ body{
     align-items: center;
 
     background-color: var(--grey);
-    height: 100vh;
 }
 
 .galleryShowPg h3{
