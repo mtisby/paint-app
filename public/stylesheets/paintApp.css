@@ -215,6 +215,16 @@ body{
     background-size: contain;
 }
 
+@media (min-width: 1401px) { 
+    .aboutUs{
+        background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1637547646/paint-app/Untitled_6_oaeouc.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    
+}
+
 .people{
     display: flex;
     flex-direction: row;
