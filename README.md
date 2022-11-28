@@ -1,7 +1,7 @@
-<a href="https://pacific-bastion-50258.herokuapp.com/"><img src="/public/images/logo-for-github.png"></a>
+<a href="https://poodledoodle.onrender.com/"><img src="/public/images/logo-for-github.png"></a>
 
 <p>This project is a web app made to release your inner child. 
-Use your creative side to doodle with Poodle Doodle <a href="https://pacific-bastion-50258.herokuapp.com/">here</a></p>
+Use your creative side to doodle with Poodle Doodle <a href="https://poodledoodle.onrender.com/">here</a></p>
 
 ## 💻 What it does
 <p>Poodle Doodle is a web app that allows you to doodle and to checkout other people's doodles. Whether you want to draw with a pen, or use shapes, Poodle Doodle can make your visions come to life.</p>
